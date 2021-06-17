@@ -14,16 +14,14 @@ function mostra(frase) {
     pulaLinha();
 }
 
-var pesoFlavio = 73;
-var alturaFlavio = 1.71;
-var imcFlavio = pesoFlavio / (alturaFlavio * alturaFlavio);
-mostra("O IMC do Flávio é " + imcFlavio);
+function calculaImc(altura, peso) {
 
-var pesoAmigo = 68;
-var alturaAmigo = 1.72;
-var imcAmigo = pesoAmigo / (alturaAmigo * alturaAmigo); 
-mostra("O IMC do meu amigo é " + imcAmigo);
+    var imc = peso / (altura * altura);
+    mostra("O IMC calculadora é " + imc);
+}
 
+calculaImc(1.71, 73); 
+calculaImc(1.72, 68); 
 
 
 </script>
