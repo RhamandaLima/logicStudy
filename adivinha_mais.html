@@ -5,14 +5,14 @@
 
 <script>
 
-    var segredo = Math.round(Math.random() * 10);
+    var segredos = [5, 7, 10, 2];
 
     var input = document.querySelector("input");
     input.focus();
-    
+
     function verifica() {
         
-        if(input.value == segredo) {
+        if(input.value == segredos) {
 
             alert("Você acertou!!");
         } else {
