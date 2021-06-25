@@ -14,6 +14,9 @@ let yRaquete = 150;
 let raqueteComprimento = 10;
 let raqueteAltura = 90;
 
+let colidiu = false; 
+
+
 function setup() {
   createCanvas(600, 400);
 }
@@ -25,7 +28,8 @@ function draw() {
   verificaColisaoBorda();
   mostraRaquete();
   movimentaMinhaRaquete();
-  verificaColisaoRaquete();
+  //verificaColisaoRaquete();
+  colisaoMinhaRaqueteBiblioteca();
 }
 
 function mostraBolinha(){
@@ -44,7 +48,7 @@ function verificaColisaoBorda(){
     
   }
   
-  if (yBolinha + raio > height || yBolinha - raio < 0){
+  if(yBolinha + raio > height || yBolinha - raio < 0){
     velocidadeYBolinha *= -1;
   }
 }
@@ -66,4 +70,12 @@ function verificaColisaoRaquete () {
   if(xBolinha - raio < xRaquete + raqueteComprimento && yBolinha - raio< yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
      velocidadeXBolinha *= -1; 
   }
+}
+
+function colisaoMinhaRaqueteBiblioteca(){
+  colidiu = collideRectCircle(xRaquete, yRaquete, raqueteComprimento, raqueteAltura, xBolinha, yBolinha, raio);
+  if(colidiu){
+    velocidadeXBolinha *= -1;
+  }
+  
 }
