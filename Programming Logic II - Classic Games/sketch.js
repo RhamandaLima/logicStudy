@@ -9,15 +9,16 @@ let velocidadeXBolinha = 6;
 let velocidadeYBolinha = 6; 
 
 //variáveis da raquete
-let xRaquete = 5;
+let xRaquete = 3;
 let yRaquete = 150; 
 let raqueteComprimento = 10;
 let raqueteAltura = 90;
 
 //variáveis do oponente
-let xRaqueteOponente = 585; 
+let xRaqueteOponente = 587; 
 let yRaqueteOponente = 150;
 let velocidadeYOponente;
+let chanceDeErrar = 0;
 
 let colidiu = false; 
 
@@ -111,7 +112,22 @@ function verificaColisaoRaquete(x, y){
 
 function movimentaRaqueteOponente(){
   velocidadeYOponente = yBolinha - yRaqueteOponente - raqueteComprimento / 2 - 30;
-  yRaqueteOponente += velocidadeYOponente; 
+  yRaqueteOponente += velocidadeYOponente + chanceDeErrar; 
+  calculaChanceDeErrar();
+}
+
+function calculaChanceDeErrar() {
+  if (pontosDoOponente >= meusPontos) {
+    chanceDeErrar += 1;
+    if (chanceDeErrar >= 39){
+    chanceDeErrar = 40;
+    }
+  } else {
+    chanceDeErrar -= 1;
+    if (chanceDeErrar <= 35){
+    chanceDeErrar = 35;
+    }
+  }
 }
 
 function incluiPlacar(){
