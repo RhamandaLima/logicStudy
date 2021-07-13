@@ -5,9 +5,14 @@
     var tela = document.querySelector("canvas");
     var pincel = tela.getContext("2d");
 
-   // O projeto tem como objetivo escrever um quadrado. 
+   // O projeto tem como objetivo imprimir um quadrado. 
    
    pincel.fillStyle = "green";
    pincel.fillRect(0, 0, 50, 50);
+   pincel.fillStroke = "black";
+   pincel.strokeRect(0, 0, 50, 50);
+
+   pincel.fillRect(50, 0, 50, 50);
+   pincel.fillRect(100, 0, 50, 50);
    
 </script>
