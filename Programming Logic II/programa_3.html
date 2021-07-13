@@ -14,8 +14,14 @@
 
     }
 
-    desenhaQuadrado(0, 0, "blue");
-    desenhaQuadrado(0, 50, "red");
-    desenhaQuadrado(0, 100, "yellow");
+    var x = 0; 
 
+    while(x < 600) {
+
+        desenhaQuadrado(x, 0, "green");
+        desenhaQuadrado(x, 50, "red");
+        desenhaQuadrado(x, 100, "blue");
+        x = x + 50; 
+    }
+    
 </script>
