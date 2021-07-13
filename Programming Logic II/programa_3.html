@@ -1,20 +1,21 @@
 <canvas width="600" height="400"></canvas>
 
 <script>
-// O projeto tem como objetivo imprimir um quadrado. 
 
-//Note 01: strokeStyle (pincel.strokeStyle = 'red') altera para uma cor diferente de preto, ao passo que ao não definirmos a cor, a padrão será "black".
-
-    function desenhaQuadradoVerde() {
+    function desenhaQuadradoVerde(x) {
 
         var tela = document.querySelector("canvas");
         var pincel = tela.getContext("2d");
         
         pincel.fillStyle = "green";
-        pincel.fillRect(0, 0, 50, 50);
+        pincel.fillRect(x, 0, 50, 50);
         pincel.fillStroke = "black";
-        pincel.strokeRect(0, 0, 50, 50);
+        pincel.strokeRect(x, 0, 50, 50);
 
     }
+
+    desenhaQuadradoVerde(0);
+    desenhaQuadradoVerde(50);
+    desenhaQuadradoVerde(100);
 
 </script>
