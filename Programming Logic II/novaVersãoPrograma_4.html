@@ -19,6 +19,17 @@
         pincel.fill();
         console.log(x + ',' + y);
 
+        if(evento.shiftKey == true) {
+
+            pincel.fillStyle = 'blue';
+            pincel.beginPath();
+            pincel.arc(x, y, 30, 0, 2 * 3.14);
+            pincel.fill();
+            console.log(x + ',' + y);
+    
+        }
+
+        return false;
     }
 
     tela.onclick = desenhaCirculo;
