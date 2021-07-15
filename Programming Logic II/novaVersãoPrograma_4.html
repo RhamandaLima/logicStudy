@@ -4,6 +4,8 @@
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
 
+    var raio = 10;
+
     pincel.fillStyle = 'gray';
     pincel.fillRect(0, 0, 600, 400);
 
@@ -12,13 +14,11 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        var raio = 10;
-
         console.log(x + ',' + y);
 
         if (evento.shiftKey) {
 
-           raio = raio + 20; // raio agora passa a valer 30!
+           raio = raio + 10;
         }
 
         pincel.fillStyle = 'blue';
