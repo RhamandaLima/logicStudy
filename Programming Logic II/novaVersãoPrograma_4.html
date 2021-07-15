@@ -16,9 +16,24 @@
 
         console.log(x + ',' + y);
 
-        if (evento.shiftKey) {
+        if(evento.shiftKey) {
 
            raio = raio + 10;
+
+           if(raio >= 40) {
+
+                raio = 40; 
+            }
+        }
+
+        if(evento.altKey) {
+
+            raio = raio - 5;
+            
+            if(raio <= 10) {
+
+                raio = 10;
+            }
         }
 
         pincel.fillStyle = 'blue';
