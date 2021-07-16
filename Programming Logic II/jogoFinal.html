@@ -51,15 +51,13 @@
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
 
-        alert(xAleatorio);
-        alert(yAleatorio);
+        if((x > xAleatorio - raio) 
+                && (x < xAleatorio + raio) 
+                && (y > yAleatorio - raio) 
+                && (y < yAleatorio + raio)) {
 
-        if() {
-
-            Alert("Acertou o alvo!");
+            alert("Acertou o alvo!");
         }
-
-
     }
     
     tela.onclick = dispara; 
